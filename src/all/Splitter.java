@@ -12,19 +12,14 @@ public class Splitter implements SplitterInterface
 		
 		String text_part_1;
 		String text_part_2;
+		String text_short;
 		
-		if (text.length() > 3) {	
-			text_part_1 = original.substring(0, 4);
-			text_part_2 = original.substring(4);
+		if (original.length() > 3) {	
+			split_list.add(original.substring(0, 4).toLowerCase());
+			split_list.add(original.substring(4).toLowerCase());
 		} else {
-			String 
+			split_list.add() 
 		}
-		
-		text_part_1 = text_part_1.toLowerCase();
-		text_part_2 = text_part_2.toLowerCase();
-		
-		split_list.add(text_part_1);
-		split_list.add(text_part_2);
 		
 		return split_list;
 	}
