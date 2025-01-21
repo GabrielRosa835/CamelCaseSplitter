@@ -10,15 +10,11 @@ public class Splitter implements SplitterInterface
 	public List<String> split(String original) {
 		ArrayList<String> split_list = new ArrayList<String>();
 		
-		String text_part_1;
-		String text_part_2;
-		String text_short;
-		
-		if (original.length() > 3) {	
+		if (original.length() > 4) {	
 			split_list.add(original.substring(0, 4).toLowerCase());
 			split_list.add(original.substring(4).toLowerCase());
 		} else {
-			split_list.add() 
+			split_list.add(original.toLowerCase()); 
 		}
 		
 		return split_list;

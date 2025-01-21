@@ -11,43 +11,38 @@ class CamelCaseTests {
 
 	@Test
 	void noChange() {
-		String name = "name";
-		String split_nome = splitter.split(name).get(0);
-		assertEquals("nome", split_name);
+		String split_name = splitter.split("name").get(0);
+		assertEquals("name", split_name);
 	}
 	
 	@Test
 	void allLowerCase() {
-		String Name = "Name";
-		String split_Nome = splitter.split(Name).get(0);
-		assertEquals("nome", split_Name);
+		String split_Name = splitter.split("Name").get(0);
+		assertEquals("name", split_Name);
 	}
 	
 	@Test
 	void compositeText() {
-		String compositeName = "compositeName";
-		List<String> split_list = splitter.split(compositeName);
-		String composite = split_list.get(0);
-		String name = split_list.get(1);
-		assertEquals("composite", composite);
+		List<String> split_parts = splitter.split("nameSurname");
+		String name = split_parts.get(0);
+		String surname = split_parts.get(1);
 		assertEquals("name", name);
+		assertEquals("surname", surname);
 	}
 	
 	@Test
 	void compositePlusUpperCaseInitial() {
-		String CompositeName = "CompositeName";
-		List<String> split_list = splitter.split(CompositeName);
-		String composite = split_list.get(0);
-		String name = split_list.get(1);
-		assertEquals("composite", composite);
+		List<String> split_parts = splitter.split("NameSurname");
+		String name = split_parts.get(0);
+		String surname = split_parts.get(1);
 		assertEquals("name", name);
+		assertEquals("surname", surname);
 	}
 	
 	@Test
 	void allUpperCase() {
-		String ID = "ID";
-		String split_ID = splitter.split(ID).get(0);
-		assertEquals("CPF", split_ID);
+		String split_ID = splitter.split("ID").get(0);
+		assertEquals("ID", split_ID);
 	}
 
 }
